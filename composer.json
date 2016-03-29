@@ -1,0 +1,16 @@
+{
+     "name": "vendor/summer-reading",
+    "description": "Description of project summer_reading.",
+    "authors":
+   
+   [
+        {
+            "name": "Sequon",
+            "email": "your@email.here"
+        }
+    ],
+   "require": {
+        "twbs/bootstrap": "v3.3.6"
+    }
+}
+    
