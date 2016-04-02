@@ -8,6 +8,7 @@ and open the template in the editor.
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
+
 ?>
 <html>
     <head>
@@ -31,7 +32,7 @@ include_once 'includes/functions.php';
  <div class="container-fluid">
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
-       <form action="includes/functions.php" method="post">
+       <form action="includes/formprocessing.php" method="post">
      <div class="form-group ">
       <label class="control-label requiredField">
        What branch are you using to register?
@@ -58,19 +59,19 @@ include_once 'includes/functions.php';
       <div class="">
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for[]" type="radio" value="Kids Program"/>
+         <input name="program_reg_for" type="radio" value="Kids Program"/>
          Kids Program
         </label>
        </div>
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for[]" type="radio" value="Teen Program"/>
+         <input name="program_reg_for" type="radio" value="Teen Program"/>
          Teen Program (rising 6th grader)
         </label>
        </div>
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for[]" type="radio" value="Adult Program"/>
+         <input name="program_reg_for" type="radio" value="Adult Program"/>
          Adult Program
         </label>
        </div>
