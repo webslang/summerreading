@@ -18,10 +18,16 @@ include_once 'includes/functions.php';
                 
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
 
+<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
     
-   <!-- HTML Form (wrapped in a .bootstrap-iso div) --> 
+<!-- HTML Form (wrapped in a .bootstrap-iso div) --> 
+   
+    
+    
     </head>
     <body>
         <?php
@@ -29,11 +35,12 @@ include_once 'includes/functions.php';
     ?>
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 <div class="bootstrap-iso">
- <div class="container-fluid">
+ <div class="container">
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
+       <div class="container">
        <form action="includes/formprocessing.php" method="post">
-     <div class="form-group ">
+     <div class="form-group">
       <label class="control-label requiredField">
        What branch are you using to register?
        <span class="asteriskField">
@@ -148,6 +155,9 @@ include_once 'includes/functions.php';
        Please select one of the following options
       </span>
       <select class="select form-control" id="grade_level" name="grade_level">
+       <option value="">
+      
+       </option>       
        <option value="Preschool">
         Preschool
        </option>
@@ -265,6 +275,49 @@ include_once 'includes/functions.php';
        </div>
       </div>
      </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="tshirt_sizes">
+       Please select your preferred t-shirt size
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <span class="help-block" id="hint_grade_level">
+       (t-shirt sizes are not guaranteed)
+      </span>
+      <select class="select form-control" id="grade_level" name="tshirt_sizes">
+       <option value="">
+       
+       </option>
+       <option value="Youth Small">
+        Youth Small
+       </option>
+       <option value="Youth Medium">
+        Youth Medium
+       </option>
+       <option value="Youth Large">
+        Youth Large
+       </option>
+       <option value="Adult Small">
+        Adult Small
+       </option>
+       <option value="Adult Medium">
+        Adult Medium
+       </option>
+       <option value="Adult Large">
+        Adult Large
+       </option>
+       <option value="Adult X-large">
+        Adult X-large
+       </option>
+       <option value="Adult XX-large">
+       Adult XX-large
+       </option>
+       <option value="Adult XXX-large">
+        Adult XXX-large
+       </option>
+      </select>
+     </div>
      <div class="form-group">
       <div>
        <button class="btn btn-primary " name="submit" type="submit">
@@ -272,6 +325,7 @@ include_once 'includes/functions.php';
        </button>
       </div>
      </div>
+       </div>
     </form>
    </div>
   </div>

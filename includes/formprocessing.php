@@ -26,10 +26,11 @@ $school_attend = filter_input(INPUT_POST,'school_attend', FILTER_SANITIZE_STRING
 $grade_level = filter_input(INPUT_POST, 'grade_level', FILTER_SANITIZE_STRING);
 $book_reading_promise = filter_input(INPUT_POST, 'book_reading_promise', FILTER_SANITIZE_NUMBER_INT);
 $how_did_you_hear = filter_input(INPUT_POST, 'how_did_you_hear', FILTER_SANITIZE_STRING);
+$tshirt_sizes = filter_input(INPUT_POST, 'tshirt_sizes', FILTER_SANITIZE_STRING);
 
 
-$sql = "INSERT INTO patrons_info (created, branch, program_reg_for, first_name, last_name, email, zip_code, school_attend, grade_level, book_reading_promise, how_did_you_hear)
-        VALUES ('$date_created', '$branch', '$program_reg_for', '$first_name', '$last_name', '$email', '$zip_code', '$school_attend', '$grade_level', '$book_reading_promise', '$how_did_you_hear')";
+$sql = "INSERT INTO patrons_info (created, branch, program_reg_for, first_name, last_name, email, zip_code, school_attend, grade_level, book_reading_promise, how_did_you_hear, tshirt_sizes)
+        VALUES ('$date_created', '$branch', '$program_reg_for', '$first_name', '$last_name', '$email', '$zip_code', '$school_attend', '$grade_level', '$book_reading_promise', '$how_did_you_hear', '$tshirt_sizes')";
 
 
 if(mysqli_query($mysqli, $sql)){

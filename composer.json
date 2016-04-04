@@ -10,7 +10,6 @@
         }
     ],
    "require": {
-        "twbs/bootstrap": "v3.3.6"
-    }
+          "twbs/bootstrap": "3.3.x-dev"
+     }
 }
-    
