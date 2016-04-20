@@ -221,55 +221,55 @@ include_once 'includes/functions.php';
       <div class=" ">
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Newspaper"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Newspaper"/>
          Newspaper
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Radio"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Radio"/>
          Radio
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="TPL website"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="TPL website"/>
          TPL website
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Social Media (Facebook, Twitter, Instagram)"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Social Media (Facebook, Twitter, Instagram)"/>
          Social Media (Facebook, Twitter, Instagram)
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="TPL staff"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="TPL staff"/>
          TPL staff
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Participated in the past"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Participated in the past"/>
          Participated in the past
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Through my child's school"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Through my child's school"/>
          Through my child's school
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="From other TPL patrons (word of mouth)"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="From other TPL patrons (word of mouth)"/>
          From other TPL patrons (word of mouth)
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear" type="checkbox" value="Other"/>
+         <input name="how_did_you_hear[]" type="checkbox" value="Other"/>
          Other
         </label>
        </div>
