@@ -21,13 +21,22 @@ include_once 'includes/functions.php';
 <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
 <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" /> 
+<script src="http://code.jquery.com/jquery-2.2.3.js"></script>
+<script src="js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+
+
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
     
 <!-- HTML Form (wrapped in a .bootstrap-iso div) --> 
    
-    
-    
+ <script> 
+    $(document).ready(function(){ 
+        $("#summerreading").validationEngine(); 
+    }); 
+</script>
     </head>
     <body>
         <?php
@@ -39,7 +48,7 @@ include_once 'includes/functions.php';
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container">
-       <form action="includes/formprocessing.php" method="post">
+           <form id="summerreading" name="summerreading" action="includes/formprocessing.php" method="post">
      <div class="form-group">
       <label class="control-label requiredField">
        What branch are you using to register?
@@ -121,7 +130,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_email">
        Adult or child's email address
       </span>   
-      <input class="form-control" id="email" name="email" type="text"/>
+         <input id="email" name="email" type="text" value="" class="validate[required,custom[email]] form-control" data-errormessage-value-missing="Email is required" data-errormessage-value-error="Format: johndoe@tpl.com"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="zip_code">
@@ -146,7 +155,7 @@ include_once 'includes/functions.php';
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="grade_level">
-       Grade (fall 2015)
+       Grade (fall 2016)
        <span class="asteriskField">
         *
        </span>
@@ -327,6 +336,7 @@ include_once 'includes/functions.php';
      </div>
        </div>
     </form>
+
    </div>
   </div>
  </div>
