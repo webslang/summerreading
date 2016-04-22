@@ -85,6 +85,10 @@
                     "regex": /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     "alertText": "* Invalid email address"
                 },
+                "zip": {
+                "regex": /^[0-9]{5}|[0-9]{5}-[0-9]{4}$/,
+                "alertText": "Enter Valid Zip Code (XXXXX or XXXXX-XXXX)"
+                },
                 "integer": {
                     "regex": /^[\-\+]?\d+$/,
                     "alertText": "* Not a valid integer"
@@ -92,7 +96,7 @@
                 "number": {
                     // Number, including positive, negative, and floating decimal. credit: orefalo
                     "regex": /^[\-\+]?((([0-9]{1,3})([,][0-9]{3})*)|([0-9]+))?([\.]([0-9]+))?$/,
-                    "alertText": "* Invalid floating decimal number"
+                    "alertText": "* Invalid number"
                 },
                 "date": {                    
                     //	Check if date is valid by leap year

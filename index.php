@@ -59,7 +59,7 @@ include_once 'includes/functions.php';
       <div class="">
        <div class="radio">
         <label class="radio">
-         <input name="branch" type="radio" value="Main Branch"/>
+         <input name="branch" type="radio" value="Main Branch" class="validate[required]" />
          Main Branch
         </label>
        </div>
@@ -75,26 +75,26 @@ include_once 'includes/functions.php';
       <div class="">
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for" type="radio" value="Kids Program"/>
+         <input name="program_reg_for" type="radio" value="Kids Program" class="validate[required]"/>
          Kids Program
         </label>
        </div>
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for" type="radio" value="Teen Program"/>
+         <input name="program_reg_for" type="radio" value="Teen Program" class="validate[required]"/>
          Teen Program (rising 6th grader)
         </label>
        </div>
        <div class="radio">
         <label class="radio">
-         <input name="program_reg_for" type="radio" value="Adult Program"/>
+         <input name="program_reg_for" type="radio" value="Adult Program" class="validate[required]"/>
          Adult Program
         </label>
        </div>
       </div>
      </div>
      <div class="form-group ">
-      <label class="control-label requiredField" for="first_name">
+      <label class="control-label requiredField" for="first_name" >
        First Name
        <span class="asteriskField">
         *
@@ -104,7 +104,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_first_name">
        First Name Only
       </span>
-      <input class="form-control" id="name" name="first_name" placeholder="John..." type="text"/>
+      <input class="form-control validate[required]" id="name" name="first_name" placeholder="John..." type="text"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
@@ -117,7 +117,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_last_name">
        Last Name Only
       </span>
-      <input class="form-control" id="name" name="last_name" placeholder="Doe..." type="text"/>
+      <input class="form-control validate[required]" id="name" name="last_name" placeholder="Doe..." type="text"/>
      </div>
         
      <div class="form-group ">
@@ -130,7 +130,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_email">
        Adult or child's email address
       </span>   
-         <input id="email" name="email" type="text" value="" class="validate[required,custom[email]] form-control" data-errormessage-value-missing="Email is required" data-errormessage-value-error="Format: johndoe@tpl.com"/>
+         <input id="email" name="email" type="text" value="" class="validate[custom[email]] form-control" data-errormessage-value-missing="Email is required" data-errormessage-value-error="Format: johndoe@tpl.com"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="zip_code">
@@ -139,7 +139,7 @@ include_once 'includes/functions.php';
         *
        </span>
       </label>
-      <input class="form-control" id="zip_code" name="zip_code" type="text"/>
+      <input class="form-control validate[required,custom[zip]]" id="zip_code" name="zip_code" type="text"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="school_attend">
@@ -151,7 +151,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_school_attend">
        N/A if registering for the Adult Program
       </span>
-      <input class="form-control" id="school_attend" name="school_attend" type="text"/>
+      <input class="form-control validate[required] " id="school_attend" name="school_attend" type="text"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="grade_level">
@@ -163,7 +163,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_grade_level">
        Please select one of the following options
       </span>
-      <select class="select form-control" id="grade_level" name="grade_level">
+      <select class="select form-control validate[required]" id="grade_level" name="grade_level">
        <option value="">
       
        </option>       
@@ -215,7 +215,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_book_reading_promise">
        Please count movies if you are registering for the Adult Program
       </span>
-      <input class="form-control" id="book_reading_promise" name="book_reading_promise" type="text"/>
+      <input class="form-control validate[required,custom[number]]"  id="book_reading_promise" name="book_reading_promise" type="text"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField">
@@ -230,55 +230,55 @@ include_once 'includes/functions.php';
       <div class=" ">
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Newspaper"/>
+            <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Newspaper"/>
          Newspaper
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Radio"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Radio"/>
          Radio
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="TPL website"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="TPL website"/>
          TPL website
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Social Media (Facebook, Twitter, Instagram)"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Social Media (Facebook, Twitter, Instagram)"/>
          Social Media (Facebook, Twitter, Instagram)
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="TPL staff"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="TPL staff"/>
          TPL staff
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Participated in the past"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Participated in the past"/>
          Participated in the past
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Through my child's school"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Through my child's school"/>
          Through my child's school
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="From other TPL patrons (word of mouth)"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="From other TPL patrons (word of mouth)"/>
          From other TPL patrons (word of mouth)
         </label>
        </div>
        <div class="checkbox">
         <label class="checkbox">
-         <input name="how_did_you_hear[]" type="checkbox" value="Other"/>
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Other"/>
          Other
         </label>
        </div>
@@ -294,7 +294,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_grade_level">
        (t-shirt sizes are not guaranteed)
       </span>
-      <select class="select form-control" id="grade_level" name="tshirt_sizes">
+      <select class="select form-control validate[required] " id="grade_level" name="tshirt_sizes">
        <option value="">
        
        </option>
