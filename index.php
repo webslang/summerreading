@@ -17,7 +17,7 @@ include_once 'includes/functions.php';
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-
+<link href="css/custom.css" rel="stylesheet" type="text/css"/>
 <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
 <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -43,13 +43,16 @@ include_once 'includes/functions.php';
         // put your code here
     ?>
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-<div class="bootstrap-iso">
+<div class="bootstrap-iso sports-bg">
  <div class="container">
+     <div class="row>">
+     </div>
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container">
-           <form id="summerreading" name="summerreading" action="includes/formprocessing.php" method="post">
+           <form id="summerreading" class="form-container" name="summerreading" action="includes/formprocessing.php" method="post" onsubmit =" document.getElementById(' submit-button'). disabled = true;" >
      <div class="form-group">
+          <h1>TPL - Summer Reading Sign-up Form</h1>  
       <label class="control-label requiredField">
        What branch are you using to register?
        <span class="asteriskField">
@@ -104,7 +107,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_first_name">
        First Name Only
       </span>
-      <input class="form-control validate[required]" id="name" name="first_name" placeholder="John..." type="text"/>
+      <input class="form-control validate[required]" id="name" name="first_name" placeholder="John or Jane..." type="text"/>
      </div>
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
@@ -329,6 +332,7 @@ include_once 'includes/functions.php';
      </div>
      <div class="form-group">
       <div>
+          <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
        </button>

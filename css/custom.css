@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 22, 2016, 3:23:48 PM
+    Author     : smay
+*/
+
+.sports-bg {
+    background-image: url("../img/summer_reading2016.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.form-container {
+    background-color: #fff ;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding: 19px;
+    margin: 10px 0px;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 3px;
+}
