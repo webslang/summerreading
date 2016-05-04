@@ -50,7 +50,7 @@ include_once 'includes/functions.php';
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container">
-           <form id="summerreading" class="form-container" name="summerreading" action="includes/booksread_update.php" method="post" >
+           <form id="summerreading" class="form-container" name="summerreading" action="<?php list_patron() ?>" method="post" >
      <h1>TPL - Summer Reading - Books Read</h1>  
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
