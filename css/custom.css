@@ -13,6 +13,10 @@ and open the template in the editor.
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
+    min-height: 100%;
+   
+
+ 
 }
 
 .form-container {
@@ -24,4 +28,9 @@ and open the template in the editor.
     border-color: #ccc;
     border-style: solid;
     border-width: 3px;
+}
+
+#searchresults {
+    background-color: #fff ;
+   
 }

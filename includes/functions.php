@@ -5,21 +5,3 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-function list_patron() {
-include_once 'psl_config.php';
-include_once 'db_connect.php';
-if(isset(filter_input(INPUT_POST,'last_name'))){ 
-if(preg_match("/[A-Z  | a-z]+/", filter_input(INPUT_POST,'last_name'))){
-    $last_name_search = filter_input(INPUT_POST,'last_name');
-// Check connection
-if($mysqli === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-$sql = "SELECT id, first_name, last_name, email, zip_code, school_attend, book_reading_promise, books_read FROM patrons_info WHERE last_name LIKE '%" .$last_name_search . "%'";
-
-$result=mysqli_query($mysqli, $sql); 
-}
-}
-}

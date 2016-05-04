@@ -45,4 +45,3 @@ if(mysqli_query($mysqli, $sql)){
 
 // close connection
 mysqli_close($mysqli);
-
