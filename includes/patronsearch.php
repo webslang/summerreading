@@ -67,7 +67,7 @@ $books_read = $row['books_read'];
 // link to update.php and send value of id 
 ?>
 
-<td align="center"><a href="../patrons_update.php?id=<?php echo $id; ?>">update</a></td>
+<td align="center"><a href="patronsupdate.php?id=<?php echo $id; ?>">update</a></td>
 </tr>
  
 <?php
