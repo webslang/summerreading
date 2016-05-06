@@ -4,7 +4,9 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
+<?php
+session_start(); // Session starts here.
+?>
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
@@ -16,7 +18,6 @@ include_once 'includes/functions.php';
         <title></title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
 <link href="css/custom.css" rel="stylesheet" type="text/css"/>
 <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
@@ -38,20 +39,29 @@ include_once 'includes/functions.php';
     }); 
 </script>
     </head>
-    <body>
+    <body class="sports-bg">
         <?php
         // put your code here
     ?>
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-<div class="bootstrap-iso sports-bg">
+<div class="bootstrap-iso">
  <div class="container">
      <div class="row>">
      </div>
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
-       <div class="container">
-           <form id="summerreading" class="form-container" name="summerreading" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
-     <h1>TPL - Summer Reading - Patron Lookup</h1>  
+       <div class="container"> 
+            <span id="error">
+ <!---- Initializing Session for errors --->
+ <?php
+ if (!empty($_SESSION['error'])) {
+ echo $_SESSION['error'];
+ unset($_SESSION['error']);
+ }
+ ?>
+ </span>
+           <form id="summerreading" class="form-container col-md-8 col-md-offset-2" name="summerreading" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
+       <h1>TPL - Summer Reading - Patron Lookup</h1> 
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
        Last Name
@@ -71,6 +81,9 @@ include_once 'includes/functions.php';
           <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
+       </button>
+            <button class="btn btn-primary " name="reset" type="Reset" >
+        Reset
        </button>
       </div>
      </div>

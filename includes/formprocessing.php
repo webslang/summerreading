@@ -36,12 +36,69 @@ $sql = "INSERT INTO patrons_info (created, branch, program_reg_for, first_name, 
         VALUES ('$date_created', '$branch', '$program_reg_for', '$first_name', '$last_name', '$email', '$zip_code', '$school_attend', '$grade_level', '$book_reading_promise', '$how_did_you_hear_multiple', '$tshirt_sizes')";
 }
 
-if(mysqli_query($mysqli, $sql)){
-    echo "Records added successfully.";
-    header("Refresh: 5; url= ../index.php");
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+                <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+                
+
+<link href="../css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css" /> 
+<script src="http://code.jquery.com/jquery-2.2.3.js"></script>
+<script src="js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+    
+<!-- HTML Form (wrapped in a .bootstrap-iso div) --> 
+   
+ <script> 
+    $(document).ready(function(){ 
+        $("#summerreading").validationEngine(); 
+    }); 
+</script>
+    </head>
+    <body class="sports-bg">
+     
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="bootstrap-iso">
+ <div class="container">
+     <div class="row>">
+     </div>
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+       <div class="container">
+            <?php
+        // put your code here
+            if(mysqli_query($mysqli, $sql)){
+    echo "<h1>Registration Is Complete!</h1>";
+    echo "<p>Thank you for registering. Please visit a service desk to pick-up your prizes.</p>";
+    echo '<h3><a href="http://localhost/summerreading/index.php">Submit New Entry</a></h3>';
+    header("Refresh: 20; url= ../index.php");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 }
 
 // close connection
 mysqli_close($mysqli);
+    ?>    
+           
+   </div>
+  </div>
+ </div>
+</div>
+   
+    </body>
+</html>
+
+
+

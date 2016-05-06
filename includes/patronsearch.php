@@ -22,21 +22,21 @@ echo  "<p>Please enter a search query</p>";
 
 ?>
 
-
+<div class="table-responsive col-md-8 col-md-offset-2">
 <table class="table table-bordered" id="searchresults" >
 <tr>
-    <td colspan="4"><h2><strong>Search Results </strong></h2> </td>
+    <td colspan="8"><h2><strong>Search Results </strong></h2> </td>
 </tr>
 
 <tr>
-<td align="center"><strong>First Name</strong></td>
-<td align="center"><strong>Last Name</strong></td>
-<td align="center"><strong>Email</strong></td>
-<td align="center"><strong>Zip Code</strong></td>
-<td align="center"><strong>School Attended</strong></td>
-<td align="center"><strong>BRP</strong></td>
-<td align="center"><strong>Book's Read</strong></td>
-<td align="center"><strong>Update</strong></td>
+<td align="center" ><strong>First Name</strong></td>
+<td align="center" ><strong>Last Name</strong></td>
+<td align="center" ><strong>Email</strong></td>
+<td align="center" ><strong>Zip Code</strong></td>
+<td align="center" ><strong>School Attended</strong></td>
+<td align="center" ><strong>BRP</strong></td>
+<td align="center" ><strong>Book's Read</strong></td>
+<td align="center" ><strong>Update</strong></td>
 </tr>
 
 <?php
@@ -67,7 +67,7 @@ $books_read = $row['books_read'];
 // link to update.php and send value of id 
 ?>
 
-<td align="center"><a href="patronsupdate.php?id=<?php echo $id; ?>">update</a></td>
+<td align="center"><a href="staffuse2.php?id=<?php echo $id; ?>">update</a></td>
 </tr>
  
 <?php
@@ -75,6 +75,7 @@ $books_read = $row['books_read'];
 ?>
 
 </table>
+</div>
 <?php
 // close connection
 mysqli_close($mysqli);

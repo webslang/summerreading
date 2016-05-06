@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -10,13 +10,14 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
 <link href="css/custom.css" rel="stylesheet" type="text/css"/>
 <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
@@ -38,21 +39,23 @@ include_once 'includes/functions.php';
     }); 
 </script>
     </head>
-    <body>
+    <body class="sports-bg">
         <?php
         // put your code here
     ?>
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-<div class="bootstrap-iso sports-bg">
+<div class="bootstrap-iso">
  <div class="container">
      <div class="row>">
      </div>
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container">
-           <form id="summerreading" class="form-container" name="summerreading" action="includes/formprocessing.php" method="post" onsubmit =" document.getElementById(' submit-button'). disabled = true;" >
-     <div class="form-group">
-          <h1>TPL - Summer Reading Sign-up Form</h1>  
+             
+           <form id="summerreading" class="form-container col-md-8 col-md-offset-2" name="summerreading" action="includes/formprocessing.php" method="post" onsubmit =" document.getElementById(' submit-button'). disabled = true;" >
+     <h1>TPL - Summer Reading Sign-up Form</h1> 
+     <br/>
+               <div class="form-group">
       <label class="control-label requiredField">
        What branch are you using to register?
        <span class="asteriskField">
@@ -64,6 +67,18 @@ include_once 'includes/functions.php';
         <label class="radio">
          <input name="branch" type="radio" value="Main Branch" class="validate[required]" />
          Main Branch
+        </label>
+       </div>
+        <div class="radio">
+        <label class="radio">
+         <input name="branch" type="radio" value="Weaver-Bolden" class="validate[required]" />
+        Weaver-Bolden Branch
+        </label> 
+        </div>
+           <div class="radio">
+        <label class="radio">
+         <input name="branch" type="radio" value="Brown" class="validate[required]" />
+        Brown Branch
         </label>
        </div>
       </div>
