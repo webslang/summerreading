@@ -19,7 +19,7 @@ if($mysqli === false){
 $id = filter_input(INPUT_GET,'id');
 
 // Retrieve data from database 
-$sql="SELECT id, first_name, last_name, email, zip_code, school_attend, book_reading_promise, books_read FROM patrons_info WHERE id='$id'";
+$sql="SELECT id, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, books_read FROM patrons_info WHERE id='$id'";
 $result = mysqli_query($mysqli, $sql);
 while ($row = mysqli_fetch_array($result)) {
 $id=$row['id']; 
@@ -28,6 +28,8 @@ $last_name = $row['last_name'];
 $email = $row['email'];
 $zip_code = $row['zip_code'];
 $school_attend = $row['school_attend'];
+$beginning_package = $row['beginning_package'];
+$ending_package = $row['ending_package'];
 $book_reading_promise = $row['book_reading_promise'];
 $books_read = $row['books_read'];
 }
@@ -78,7 +80,7 @@ mysqli_close($mysqli);
      </div>
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
-       <div class="container">
+       <div class="container ">
       
             <span id="error">
  <!---- Initializing Session for errors --->
@@ -91,14 +93,16 @@ mysqli_close($mysqli);
  </span>
            <form id="summerreading" class="form-container col-md-10 col-md-offset-1" name="summerreading" action="includes/updatepatron_ac.php" method="post" >
                <h1>TPL - Summer Reading - Patron Lookup</h1> 
-               <div class="table-responsive">
-     <table class="table">
+              <div class="table-responsive ">
+     <table class=" table-condensed">
          <tr>
 <td align="center" class="table-bordered"><strong>First Name</strong></td>
 <td align="center" class="table-bordered"><strong>Last Name</strong></td>
 <td align="center" class="table-bordered"><strong>Email</strong></td>
 <td align="center" class="table-bordered"><strong>Zip Code</strong></td>
 <td align="center" class="table-bordered"><strong>School Attended</strong></td>
+<td align="center" class="table-bordered" ><strong>Beginning Pack</strong></td>
+<td align="center" class="table-bordered"><strong>Ending Pack</strong></td>
 <td align="center" class="table-bordered"><strong>BRP</strong></td>
 <td align="center" class="table-bordered"><strong>Book's Read</strong></td>
          </tr>
@@ -119,10 +123,16 @@ mysqli_close($mysqli);
 <input name="school_attend" type="text" id="school_attend" value="<?php echo $school_attend; ?>" size="12" disabled="true">
 </td>
 <td class="table-bordered">
-<input name="book_reading_promise" type="text" id="book_reading_promise" value="<?php echo $book_reading_promise; ?>" size="8" disabled="true">
+<input name="beginning_package" type="text" id="beginning_package" value="<?php echo $beginning_package; ?>" size="5">
 </td>
 <td class="table-bordered">
-    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="8">
+<input name="ending_package" type="text" id="ending_package" value="<?php echo $ending_package; ?>" size="5">
+</td>
+<td class="table-bordered">
+<input name="book_reading_promise" type="text" id="book_reading_promise" value="<?php echo $book_reading_promise; ?>" size="5" disabled="true">
+</td>
+<td class="table-bordered">
+    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="5">
 </td>
 <td style="display:none;">
 <input name="id" type="hidden" id="id" value="<?php echo $id; ?>">

@@ -270,6 +270,24 @@ include_once 'includes/functions.php';
          Social Media (Facebook, Twitter, Instagram)
         </label>
        </div>
+        <div class="checkbox">
+        <label class="checkbox">
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Billboard"/>
+         Billboard
+        </label>
+       </div>
+        <div class="checkbox">
+        <label class="checkbox">
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Magazines"/>
+         Magazines
+        </label>
+       </div>
+        <div class="checkbox">
+        <label class="checkbox">
+         <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="Television"/>
+         Television
+        </label>
+       </div>
        <div class="checkbox">
         <label class="checkbox">
          <input class="validate[minCheckbox[1]]" name="how_did_you_hear[]" type="checkbox" value="TPL staff"/>

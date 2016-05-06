@@ -16,9 +16,11 @@ if($mysqli === false){
    // get value of id that sent from address bar
 $id = filter_input(INPUT_POST,'id');
 $books_read = filter_input(INPUT_POST,'books_read');
+$beginning_package = filter_input(INPUT_POST,'beginning_package');
+$ending_package = filter_input(INPUT_POST,'ending_package');
 
 // Update Patrons Info in Database 
-$sql="UPDATE patrons_info SET books_read='$books_read' WHERE id='$id'";
+$sql="UPDATE patrons_info SET books_read='$books_read', beginning_package='$beginning_package', ending_package='$ending_package' WHERE id='$id'";
 $result = mysqli_query($mysqli, $sql);
 
 
