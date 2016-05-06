@@ -70,7 +70,7 @@ echo "<h1>Update Complete!</h1>";
 echo "<br>";
 echo "<p>The patron's record has been successfully updated.";
 echo "<br>";
-echo "<h3>Click Here: <a href='../staffuse.php'>return to patron's record search.</a></h3>";
+echo "<h3>click here to: <a href='../staffuse.php'>return to patron's record search.</a></h3>";
 }
 
 else {
