@@ -334,6 +334,12 @@ include_once 'includes/functions.php';
        <option value="">
        
        </option>
+       <option value="Toddler 2T">
+        Toddler (2T)
+       </option>
+       <option value="Toddler 4T">
+        Toddler (4T)
+       </option>
        <option value="Youth Small">
         Youth Small
        </option>

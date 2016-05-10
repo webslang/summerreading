@@ -6,8 +6,8 @@ and open the template in the editor.
 <?php
 session_start(); // Session starts here.
 
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
+include_once '../includes/db_connect.php';
+include_once '../includes/functions.php';
 
 // Check connection
 if($mysqli === false){
@@ -48,14 +48,14 @@ mysqli_close($mysqli);
         <title></title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
-<link href="css/custom.css" rel="stylesheet" type="text/css"/>
-<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" /> 
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css" /> 
 <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
-<script src="js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
-<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+<script src="../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="../js/jquery.validationEngine.js" type="text/javascript"></script>
 
 
 <!-- Inline CSS based on choices in "Settings" tab -->
@@ -91,7 +91,7 @@ mysqli_close($mysqli);
  }
  ?>
  </span>
-           <form id="summerreading" class="form-container col-md-10 col-md-offset-1" name="summerreading" action="includes/updatepatron_ac.php" method="post" >
+           <form id="summerreading" class="form-container col-md-10 col-md-offset-1" name="summerreading" action="../includes/updatepatron_ac.php" method="post" >
                <h1>TPL - Summer Reading - Patron Lookup</h1> 
               <div class="table-responsive ">
      <table class=" table-condensed">
@@ -104,7 +104,7 @@ mysqli_close($mysqli);
 <td align="center" class="table-bordered" ><strong>Beginning Pack</strong></td>
 <td align="center" class="table-bordered"><strong>Ending Pack</strong></td>
 <td align="center" class="table-bordered"><strong>BRP</strong></td>
-<td align="center" class="table-bordered"><strong>Book's Read</strong></td>
+<td align="center" class="table-bordered"><strong>Books Read</strong></td>
          </tr>
   <tr>
       <td align="center" class="table-bordered">

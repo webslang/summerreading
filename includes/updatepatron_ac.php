@@ -39,8 +39,8 @@ $result = mysqli_query($mysqli, $sql);
 <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css" /> 
 <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
-<script src="js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
-<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+<script src="../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="../js/jquery.validationEngine.js" type="text/javascript"></script>
 
 
 <!-- Inline CSS based on choices in "Settings" tab -->
@@ -72,7 +72,7 @@ echo "<h1>Update Complete!</h1>";
 echo "<br>";
 echo "<p>The patron's record has been successfully updated.";
 echo "<br>";
-echo "<h3>click here to: <a href='../staffuse.php'>return to patron's record search.</a></h3>";
+echo "<h3>click here to: <a href='../admin/index.php'>return to patron's record search.</a></h3>";
 }
 
 else {

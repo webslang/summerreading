@@ -8,8 +8,8 @@ and open the template in the editor.
 session_start(); // Session starts here.
 ?>
 <?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
+include_once '../includes/db_connect.php';
+include_once '../includes/functions.php';
 
 ?>
 <html>
@@ -18,14 +18,14 @@ include_once 'includes/functions.php';
         <title></title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
-<link href="css/custom.css" rel="stylesheet" type="text/css"/>
-<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" /> 
+<script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css" /> 
 <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
-<script src="js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
-<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+<script src="../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="../js/jquery.validationEngine.js" type="text/javascript"></script>
 
 
 <!-- Inline CSS based on choices in "Settings" tab -->
@@ -60,7 +60,7 @@ include_once 'includes/functions.php';
  }
  ?>
  </span>
-           <form id="summerreading" class="form-container col-md-8 col-md-offset-2" name="summerreading" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
+           <form id="summerreading" class="form-container col-md-10 col-md-offset-1" name="summerreading" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
        <h1>TPL - Summer Reading - Patron Lookup</h1> 
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
@@ -93,7 +93,7 @@ include_once 'includes/functions.php';
                 <div class="container">
            <?php
            if (htmlentities($_SERVER['REQUEST_METHOD']) == 'POST') {
-               include __DIR__ . '/includes/patronsearch.php';
+               include __DIR__ . '\\..\\includes\\patronsearch.php';
            } 
            ?>
              

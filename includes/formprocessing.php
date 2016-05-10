@@ -83,7 +83,7 @@ $sql = "INSERT INTO patrons_info (created, branch, program_reg_for, first_name, 
     echo "<h1>Registration Is Complete!</h1>";
     echo "<p>Thank you for registering. Please visit a service desk to pick-up your prizes.</p>";
     echo '<h3>click here to:<a href="../index.php">submit new entry</a></h3>';
-    header("Refresh: 20; url= ../index.php");
+    header("Refresh: 5; url= ../index.php");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 }

@@ -22,7 +22,7 @@ echo  "<p>Please enter a search query</p>";
 
 ?>
 
-<div class="table-responsive col-md-8 col-md-offset-2">
+<div class="table-responsive col-md-10 col-md-offset-1">
 <table class="table table-bordered" id="searchresults" >
 <tr>
     <td colspan="8"><h2><strong>Search Results </strong></h2> </td>
