@@ -15,7 +15,7 @@ include_once '../includes/functions.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>TPL Summer Reading Admin Form</title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
 <link href="../css/custom.css" rel="stylesheet" type="text/css"/>
@@ -51,6 +51,7 @@ include_once '../includes/functions.php';
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container"> 
+           
             <span id="error">
  <!---- Initializing Session for errors --->
  <?php
@@ -60,8 +61,10 @@ include_once '../includes/functions.php';
  }
  ?>
  </span>
+           
            <form id="summerreading" class="form-container col-md-10 col-md-offset-1" name="summerreading" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
-       <h1>TPL - Summer Reading - Patron Lookup</h1> 
+            <h4>Access Sign-up Form: <a href="http://srform.tuscaloosa-library.org/">Summer Reading Sign-up Form</a></h3>
+               <h1>TPL - Summer Reading - Patron Lookup</h1> 
      <div class="form-group ">
       <label class="control-label requiredField" for="last_name">
        Last Name
@@ -82,9 +85,8 @@ include_once '../includes/functions.php';
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
        </button>
-            <button class="btn btn-primary " name="reset" type="Reset" >
-        Reset
-       </button>
+          
+          <a  class="btn btn-primary" role="button" href="index.php">Reset</a>
       </div>
      </div>
        </div>

@@ -62,8 +62,8 @@ $result = mysqli_query($mysqli, $sql);
      <div class="row>">
      </div>
   <div class="row">
-   <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
-       <div class="container">
+   <div class="col-md-6 col-sm-6 col-xs-7 col-md-offset-0">
+       <div class="container text-center">
             <?php
         // put your code here
 // if successfully updated. 
@@ -73,13 +73,13 @@ echo "<br>";
 echo "<p>The patron's record has been successfully updated.";
 echo "<br>";
 echo "<h3>click here to: <a href='../admin/index.php'>return to patron's record search.</a></h3>";
+}else {
+echo "<h1>Sorry, your update did not complete successfully!</h1>";
+echo "<h3>click the button below to return to the records search.</h3>";
+echo "<br>";
+echo '<a  class="btn btn-primary" role="button" href="../admin/index.php">Reset</a>';
 }
-
-else {
-echo "ERROR";
-};
-    ?>    
-           
+    ?>         
    </div>
   </div>
  </div>

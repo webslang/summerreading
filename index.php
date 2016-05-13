@@ -14,7 +14,7 @@ include_once 'includes/functions.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>TPL Summer Reading Sign-up Form 2016</title>
                 <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
                 
 
@@ -330,7 +330,7 @@ include_once 'includes/functions.php';
       <span class="help-block" id="hint_grade_level">
        (t-shirt sizes are not guaranteed)
       </span>
-      <select class="select form-control validate[required] " id="grade_level" name="tshirt_sizes">
+      <select class="select form-control validate[required] " id="tshirt_sizes" name="tshirt_sizes">
        <option value="">
        
        </option>
@@ -372,6 +372,9 @@ include_once 'includes/functions.php';
      <div class="form-group">
       <div>
           <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
+          <input name="beginning_package" type="hidden" id="beginning_package" value="no">
+            <input name="ending_package" type="hidden" id="ending_package" value="no">
+           <input name="books_read" type="hidden" id="books_read" value="0"  size="5">
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
        </button>

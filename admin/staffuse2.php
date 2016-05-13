@@ -122,30 +122,52 @@ mysqli_close($mysqli);
 <td class="table-bordered">
 <input name="school_attend" type="text" id="school_attend" value="<?php echo $school_attend; ?>" size="12" disabled="true">
 </td>
-<td class="table-bordered">
-<input name="beginning_package" type="text" id="beginning_package" value="<?php echo $beginning_package; ?>" size="5">
+<td class="table-bordered" >
+    <select name="beginning_package" id="beginning_package">
+    <option value="<?php echo "$beginning_package" ?>" disabled selected>
+     <?php echo "$beginning_package" ?>
+   </option>
+  <option value="yes" >yes</option>
+  <option value="no">no</option>
+    
+    </select>
 </td>
 <td class="table-bordered">
-<input name="ending_package" type="text" id="ending_package" value="<?php echo $ending_package; ?>" size="5">
+   <select name="ending_package" id="ending_package" disabled="true">
+   <option value="<?php echo "$ending_package" ?>"  disabled="true">
+     <?php echo "$ending_package" ?>
+   </option>
+  <option value="yes" disabled="true">yes</option>
+  <option selected="selected" value="no" disabled="true">no</option>
+    
+    </select>
 </td>
 <td class="table-bordered">
 <input name="book_reading_promise" type="text" id="book_reading_promise" value="<?php echo $book_reading_promise; ?>" size="5" disabled="true">
 </td>
 <td class="table-bordered">
-    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="5">
+    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="5" disabled="true">
 </td>
 <td style="display:none;">
 <input name="id" type="hidden" id="id" value="<?php echo $id; ?>">
 </td>
-<tr>
- <td align="center" style="border:none;">
-   <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
+  </tr>
+
+</table>
+                  <br>
+      <div class="form-group">
+      <div>
+          
+          <input name="ending_package" type="hidden" id="ending_package" value="<?php echo $ending_package; ?>">
+           <input name="books_read" type="hidden" id="books_read" value="<?php echo $books_read; ?>"  size="5">
+          
+          <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
        </button>
-</td>   
-    
-</table>
+     <a  class="btn btn-primary" role="button" href="index.php">Reset</a>
+      </div>
+     </div>                 
                </div>
     </form>
 
