@@ -15,6 +15,7 @@ if(preg_match("/[A-Z  | a-z]+/", filter_input(INPUT_POST,'branch'))){
 $sql = "SELECT id, branch, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, books_read FROM patrons_info WHERE branch LIKE '%" .$branch . "%'";
 
 $result=mysqli_query($mysqli,$sql); 
+
 } else { 
 echo  "<p>Please enter a search query</p>"; 
 }
@@ -29,7 +30,16 @@ echo  "<p>Please enter a search query</p>";
         ?>
 
        <?php
-        echo "<h2>You Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";
+       if($branch === "Main Branch") {
+       echo "<h2>The Main Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";
+       }
+        elseif ($branch === "Weaver-Bolden") {
+        echo "<h2>The Weaver Bolden Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";
+        }
+        elseif ($branch === "Brown") {
+        echo "<h2>The Brown Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";    
+        }
+       
         ?>
 
 

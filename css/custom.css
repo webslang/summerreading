@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : smay
 */
 
+
+.heading-success {
+  color: #31b0d5;
+}
+
 .sports-bg {
     background-image: url("../img/summer_reading2016.jpg");
     background-repeat: no-repeat;
