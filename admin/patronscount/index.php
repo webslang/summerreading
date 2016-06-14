@@ -24,7 +24,7 @@ include_once '../../includes/functions.php';
 <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="../../css/validationEngine.jquery.css" type="text/css" /> 
 <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
-<script src=".../../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="../../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
 <script src="../../js/jquery.validationEngine.js" type="text/javascript"></script>
 
 
@@ -75,19 +75,19 @@ include_once '../../includes/functions.php';
       <div class="">
        <div class="radio">
         <label class="radio">
-         <input name="branch" type="radio" value="Main Branch" class="validate[required]" checked/>
+         <input name="branch" type="radio" value="Main Branch" class="validate[required]" <?php if(filter_input(INPUT_POST,'branch')=="Main Branch" ){ echo "checked"; }?> />
          Main Branch
         </label>
        </div>
         <div class="radio">
         <label class="radio">
-         <input name="branch" type="radio" value="Weaver-Bolden" class="validate[required]" />
+         <input name="branch" type="radio" value="Weaver-Bolden" class="validate[required]" <?php if(filter_input(INPUT_POST,'branch')=="Weaver-Bolden" ){ echo "checked"; }?> />
         Weaver-Bolden Branch
         </label> 
         </div>
            <div class="radio">
         <label class="radio">
-         <input name="branch" type="radio" value="Brown" class="validate[required]" />
+         <input name="branch" type="radio" value="Brown" class="validate[required]" <?php if(filter_input(INPUT_POST,'branch')=="Brown" ){ echo "checked"; }?> />
         Brown Branch
         </label>
        </div>
