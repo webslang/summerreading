@@ -11,10 +11,11 @@ if($mysqli === false){
 if(filter_input(INPUT_POST,'branch')){ 
 if(preg_match("/[A-Z  | a-z]+/", filter_input(INPUT_POST,'branch'))){
     $branch = filter_input(INPUT_POST,'branch');
+    $program_reg_for = "Adult Program";
 
-$sql = "SELECT id, branch, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, books_read FROM patrons_info WHERE branch LIKE '%" .$branch . "%'";
+$sql = "SELECT id, branch, program_reg_for, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, books_read FROM patrons_info WHERE branch LIKE '%" .$branch . "%'";
 
-$result=mysqli_query($mysqli,$sql); 
+$result=mysqli_query($mysqli,$sql);
 
 } else { 
 echo  "<p>Please enter a search query</p>"; 
@@ -26,21 +27,39 @@ echo  "<p>Please enter a search query</p>";
 <div class="table-responsive col-md-10 col-md-offset-1">
 
        <?php
-        $registeredpatrons = mysqli_num_rows($result);
-        ?>
+       $registeredpatrons = mysqli_num_rows($result);
+       ?>
 
        <?php
-       if($branch === "Main Branch") {
-       echo "<h2>The Main Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";
-       }
-        elseif ($branch === "Weaver-Bolden") {
-        echo "<h2>The Weaver Bolden Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";
+       if($branch == "Main Branch") {
+           
+        echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
+     
+        while ($row = mysqli_fetch_assoc($result)) {
+           
+        $count = 0;
+        foreach ($row as $key=>$value) {
+        if ($value['program_reg_for'] == 'Adult Program') {
+         $count++;
         }
-        elseif ($branch === "Brown") {
-        echo "<h2>The Brown Branch Currently Have: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up";    
+
         }
+        echo $count;
        
-        ?>
+        }
+        
+       }
+       
+       elseif ($branch === "Weaver-Bolden") {
+       echo "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
+         
+       }
+         
+       elseif ($branch === "Brown") {
+       echo "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";    
+        
+       }
+       ?>
 
 
 </table>

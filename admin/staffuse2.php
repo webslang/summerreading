@@ -19,7 +19,7 @@ if($mysqli === false){
 $id = filter_input(INPUT_GET,'id');
 
 // Retrieve data from database 
-$sql="SELECT id, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, books_read FROM patrons_info WHERE id='$id'";
+$sql="SELECT id, first_name, last_name, email, zip_code, school_attend, beginning_package, ending_package, book_reading_promise, tshirt_sizes, books_read FROM patrons_info WHERE id='$id'";
 $result = mysqli_query($mysqli, $sql);
 while ($row = mysqli_fetch_array($result)) {
 $id=$row['id']; 
@@ -31,6 +31,7 @@ $school_attend = $row['school_attend'];
 $beginning_package = $row['beginning_package'];
 $ending_package = $row['ending_package'];
 $book_reading_promise = $row['book_reading_promise'];
+$tshirt_sizes = $row['tshirt_sizes'];
 $books_read = $row['books_read'];
 }
 
@@ -56,6 +57,7 @@ mysqli_close($mysqli);
 <script src="http://code.jquery.com/jquery-2.2.3.js"></script>
 <script src="../js/languages/jquery.validationEngine-en.js" type="text/javascript"></script>
 <script src="../js/jquery.validationEngine.js" type="text/javascript"></script>
+<script src="../js/custom.js" type="text/javascript"></script>
 
 
 <!-- Inline CSS based on choices in "Settings" tab -->
@@ -67,6 +69,26 @@ mysqli_close($mysqli);
     $(document).ready(function(){ 
         $("#summerreading").validationEngine(); 
     }); 
+</script>
+
+<script type='text/javascript'>
+$(function(){
+     $('#bp').onkeyup(function(){
+          if ($(this).val() == '') {
+               $('.enableOnInput').prop('disabled', false);
+          }
+     });
+});
+</script>
+
+<script type='text/javascript'>
+$(function(){
+     $('#ep').onkeyup(function(){
+          if ($(this).val() == '') {
+               $('.enableOnInput').prop('disabled', false);
+          }
+     });
+});
 </script>
     </head>
     <body class="sports-bg">
@@ -99,12 +121,14 @@ mysqli_close($mysqli);
 <td align="center" class="table-bordered"><strong>First Name</strong></td>
 <td align="center" class="table-bordered"><strong>Last Name</strong></td>
 <td align="center" class="table-bordered"><strong>Email</strong></td>
-<td align="center" class="table-bordered"><strong>Zip Code</strong></td>
 <td align="center" class="table-bordered"><strong>School Attended</strong></td>
 <td align="center" class="table-bordered" ><strong>Beginning Pack</strong></td>
 <td align="center" class="table-bordered"><strong>Ending Pack</strong></td>
 <td align="center" class="table-bordered"><strong>BRP</strong></td>
+<td align="center" class="table-bordered"><strong>T-Shirt Size</strong></td>
 <td align="center" class="table-bordered"><strong>Books Read</strong></td>
+
+
          </tr>
   <tr>
       <td align="center" class="table-bordered">
@@ -116,37 +140,35 @@ mysqli_close($mysqli);
 <td class="table-bordered">
 <input name="email" type="text" id="email" value="<?php echo $email; ?>" size="12" disabled="true">
 </td>
-<td class="table-bordered">
-<input name="zip_code" type="text" id="zip_code" value="<?php echo $zip_code; ?>" size="8" disabled="true">
-</td>
+
 <td class="table-bordered">
 <input name="school_attend" type="text" id="school_attend" value="<?php echo $school_attend; ?>" size="12" disabled="true">
 </td>
 <td class="table-bordered" >
-    <select name="beginning_package" id="beginning_package">
-    <option value="<?php echo "$beginning_package" ?>" disabled selected>
-     <?php echo "$beginning_package" ?>
-   </option>
-  <option value="yes" >yes</option>
-  <option value="no">no</option>
+    <select name="beginning_package" id="beginning_package" class='selectClass'>
+
+  <option value="yes" <?php if($beginning_package == "yes" ){ echo "selected"; }?>>yes</option>
+  <option value="no" <?php if($beginning_package == "no" ){ echo "selected"; }?>>no</option>
     
     </select>
 </td>
 <td class="table-bordered">
-   <select name="ending_package" id="ending_package" disabled="true">
-   <option value="<?php echo "$ending_package" ?>"  disabled="true">
-     <?php echo "$ending_package" ?>
-   </option>
-  <option value="yes" disabled="true">yes</option>
-  <option selected="selected" value="no" disabled="true">no</option>
+   <select name="ending_package" id="ending_package" class='selectClass' >
+
+  <option value="yes" <?php if($ending_package == "yes" ){ echo "selected"; }?>>yes</option>
+  <option value="no" <?php if($ending_package == "no" ){ echo "selected"; }?>>no</option>
     
     </select>
 </td>
 <td class="table-bordered">
-<input name="book_reading_promise" type="text" id="book_reading_promise" value="<?php echo $book_reading_promise; ?>" size="5" disabled="true">
+<input name="book_reading_promise" type="text" id="book_reading_promise" value="<?php echo $book_reading_promise; ?>" size="1" disabled="true">
+</td>
+
+<td class="table-bordered">
+    <input name="tshir_sizes" type="text" id="tshir_sizes" value="<?php echo $tshirt_sizes; ?>"  size="12" disabled="true">
 </td>
 <td class="table-bordered">
-    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="5" disabled="true">
+    <input name="books_read" type="text" id="books_read" value="<?php echo $books_read; ?>"  size="2" >
 </td>
 <td style="display:none;">
 <input name="id" type="hidden" id="id" value="<?php echo $id; ?>">
@@ -157,15 +179,14 @@ mysqli_close($mysqli);
                   <br>
       <div class="form-group">
       <div>
-          
-          <input name="ending_package" type="hidden" id="ending_package" value="<?php echo $ending_package; ?>">
-           <input name="books_read" type="hidden" id="books_read" value="<?php echo $books_read; ?>"  size="5">
+   
+           
           
           <input type="hidden" name="token" value="<?= md5(uniqid()) ?>"/>
        <button class="btn btn-primary " name="submit" type="submit">
         Submit
        </button>
-     <a  class="btn btn-primary" role="button" href="index.php">Reset</a>
+     <a  class="btn btn-primary enableOnInput" role="button" href="index.php">Reset</a>
       </div>
      </div>                 
                </div>
