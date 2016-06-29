@@ -34,20 +34,21 @@ echo  "<p>Please enter a search query</p>";
        if($branch == "Main Branch") {
            
         echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
-     
-        while ($row = mysqli_fetch_assoc($result)) {
-           
-        $count = 0;
-        foreach ($row as $key=>$value) {
-        if ($value['program_reg_for'] == 'Adult Program') {
-         $count++;
-        }
 
-        }
-        echo $count;
-       
-        }
-        
+while ($row = mysqli_fetch_assoc($result)) {
+ $patrons = $row;
+
+ 
+}
+
+if ($patron[2] = "Adult Program") {
+    
+   echo arr_sum($patron[2]);
+} 
+
+ print_r (array_values($patrons));
+    
+  
        }
        
        elseif ($branch === "Weaver-Bolden") {
