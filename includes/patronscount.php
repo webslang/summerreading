@@ -27,48 +27,58 @@ echo  "<p>Please enter a search query</p>";
 <div class="table-responsive col-md-10 col-md-offset-1">
 
        <?php
-       $registeredpatrons = mysqli_num_rows($result);
+       $registeredpatrons = mysqli_num_rows($result)
+               
        ?>
 
-       <?php
-       if($branch == "Main Branch") {
-           
-        echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
-
+      <?php 
 while ($row = mysqli_fetch_array($result)) {
  $patrons[] = $row[2];
- $adult = "Adult Program";
- $teen = "Teen Program";
- $kids = "Kids Program";
- 
 }
+$adults = "Adult Program";
+$teens = "Teen Program";
+$kids = "Kids Program";
 
+$adults_counter = 0;
+$teens_counter = 0;
+$kids_counter = 0;
 
-$i = 0;
 foreach ($patrons as $value) {
- if($value === $adult) {
-  $i++;
-  $value[2];
+  if($value == $adults) {
+  $adults_counter++;
+   $value[2];
+  }elseif ($value == $teens) {
+   $teens_counter++; 
+    $value[2];
+  }elseif ($value == $kids) {
+   $kids_counter++; 
+    $value[2];
+  }
 }
-}
- 
-if($value === $adult) {
-         
-  echo $i;
-    }
+    ?>
+       <?php
+    if($branch === "Main Branch") {
+        echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
 
- }
+        echo  "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$adults_counter</strong> Adults Signed Up</h2>";
+        echo  "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$teens_counter</strong> Teens Signed Up</h2>";
+        echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$kids_counter</strong> Children Signed Up</h2>";
+ }  elseif ($branch === "Weaver-Bolden") {
+        echo "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
+         
+        echo  "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$adults_counter</strong> Adults Signed Up</h2>";
+        echo  "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$teens_counter</strong> Teens Signed Up</h2>";
+        echo  "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$kids_counter</strong> Children Signed Up</h2>";
+  
+ } elseif ($branch === "Brown") {
+    echo "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";    
+         
+    echo  "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$adults_counter</strong> Adults Signed Up</h2>";
+    echo  "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$teens_counter</strong> Teens Signed Up</h2>";
+    echo  "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$kids_counter</strong> Children Signed Up</h2>";
        
-       elseif ($branch === "Weaver-Bolden") {
-       echo "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
-         
-       }
-         
-       elseif ($branch === "Brown") {
-       echo "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";    
-        
-       }
-       ?>
+ }
+?>
 
 
 </table>

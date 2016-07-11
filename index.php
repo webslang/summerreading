@@ -51,7 +51,12 @@ include_once 'includes/functions.php';
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
        <div class="container">
-             
+            <!--
+           <div class="form-container col-md-8 col-md-offset-2">
+          
+           <h1>TPL - Summer Reading Sign-up Has Ended!</h1>
+           </div>
+           --> 
            <form id="summerreading" class="form-container col-md-8 col-md-offset-2" name="summerreading" action="includes/formprocessing.php" method="post" onsubmit =" document.getElementById(' submit-button'). disabled = true;" >
      <h1>TPL - Summer Reading Sign-up Form</h1> 
      <br/>
