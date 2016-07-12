@@ -57,25 +57,25 @@ $sr_complete_counter = 0;
     if($branch === "Main Branch") {
         echo "<h2>The Main Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
 // Call Patrons' Sum Function
-        echo  "<h3>The Main Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h3>";
-        echo  "<h3>The Main Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h3>";
-        echo "<h3>The Main Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h3>";
-        echo "<h3>The Main Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h3>";
+        echo  "<h4>The Main Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h4>";
+        echo  "<h4>The Main Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h4>";
+        echo  "<h4>The Main Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h4>";
+        echo  "<h4>The Main Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h4>";
        
  }  elseif ($branch === "Weaver-Bolden") {
         echo "<h2>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";
          
-        echo  "<h3>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h3>";
-        echo  "<h3>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h3>";
-        echo  "<h3>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h3>";
-        echo  "<h3>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h3>";
+        echo  "<h4>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h4>";
+        echo  "<h4>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h4>";
+        echo  "<h4>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h4>";
+        echo  "<h4>The Weaver Bolden Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h4>";
  } elseif ($branch === "Brown") {
     echo "<h2>The Brown Branch Currently Has: <strong class=\"heading-success\">$registeredpatrons</strong> Patrons Signed Up</h2>";    
          
-    echo  "<h3>The Brown Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h3>";
-    echo  "<h3>The Brown Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h3>";
-    echo  "<h3>The Brown Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h3>";
-    echo  "<h3>The Brown Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h3>";
+    echo  "<h4>The Brown Branch Currently Has: <strong class=\"heading-success\">". patronssum($adults_counter) ."</strong> Adults Signed Up</h4>";
+    echo  "<h4>The Brown Branch Currently Has: <strong class=\"heading-success\">". $teens_counter ."</strong> Teens Signed Up</h4>";
+    echo  "<h4>The Brown Branch Currently Has: <strong class=\"heading-success\">". $kids_counter ."</strong> Children Signed Up</h4>";
+    echo  "<h4>The Brown Branch Currently Has: <strong class=\"heading-success\">". completed_sr($sr_complete_counter)."</strong> Patrons That Have Completed Sign Up</h4>";
  }
 ?>
 

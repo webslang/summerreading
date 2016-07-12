@@ -27,7 +27,7 @@ return $kids_counter;
 
 }
 
-
+// Function to calculate the number of Patrons' that have completed sign up
 function completed_sr() {
      global $srcomplete, $completed_yes, $completed_no, $sr_complete_counter;
      foreach ($srcomplete as $value) {
